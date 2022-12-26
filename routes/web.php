@@ -1,9 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use app\Http\Controllers\Controller;
+
 use app\Http\Controllers\RackController;
 use app\Http\Controllers\ShelfController;
-// use app\Http\Controllers\Controller;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,15 +23,16 @@ Route::get('/', function () {
 
 Route::get('/', 'RackController@index')->name('rack.name');
 Route::get('/create', 'RackController@create')->name('rack.create');
-Route::post('/store', 'RackController@store')->name('rack.store');
 Route::get('/show/{id}','RackController@show')->name('rack.show');
+Route::post('/store', 'RackController@store')->name('rack.store');
 Route::get('/update/{id}','RackController@update')->name('rack.update');
 Route::get('/edit/{id}',"RackController@edit")->name('rack.edit');
 Route::get('/destroy/{id}',"RackController@destroy")->name('rack.destroy');
 
 
 //Shelf
-//Route::get('index', 'ShelfController@index')->name('shelf.name');
-//Route::get('/create', 'ShelfController@create')->name('shelf.create');
-// Route::get('/show/{id}','ShelfController@show')->name('shelf.show');
+Route::get('index', 'ShelfController@index')->name('shelf.name');
+Route::get('/create', 'ShelfController@create')->name('shelf.create');
+Route::get('/show/{id}','ShelfController@show')->name('shelf.show');
+Route::post('/store', 'ShelfController@store')->name('shelf.store');
 

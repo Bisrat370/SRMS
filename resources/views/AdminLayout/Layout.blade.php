@@ -46,7 +46,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Archives</h6>
             <a class="collapse-item" href="{{route('rack.name')}}">Rack</a>
-            <a class="collapse-item" href="">Shelf</a>
+            <a class="collapse-item" href="{{route('shelf.name')}}">Shelf</a>
             <a class="collapse-item" href="dropdowns.html">Folder</a>           
           </div>
         </div>

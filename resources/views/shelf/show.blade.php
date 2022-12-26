@@ -25,7 +25,11 @@
                 <div class="form-group">
                     <label for="exampleInputEmail1">Remark</label>
                     <textarea readonly name="Remark" type="text" class="form-control">{{$shelf->Remark}}</textarea>                  
-                </div>                                     
+                </div>
+                <div class="form-group">
+                    <label for="Name">Name</label>
+                    <input readonly value="{{ $shelf->status}}" name="Name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                </div>                                       
                 </div>                    
                 <button type="submit" class="btn btn-primary">Submit</button>        
             </div>

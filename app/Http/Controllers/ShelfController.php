@@ -67,7 +67,9 @@ class ShelfController extends Controller
      */
     public function edit($id)
     {
-        //
+        $shelf = Shelf::find($id);
+        $shelves = Shelf::all();
+        return view('shelf.edit',['shelves' => $shelves,'shelf'=>$rack,'layout'=>'edit']);
     }
 
     /**
