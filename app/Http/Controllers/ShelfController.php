@@ -69,7 +69,7 @@ class ShelfController extends Controller
     {
         $shelf = Shelf::find($id);
         $shelves = Shelf::all();
-        return view('shelf.edit',['shelves' => $shelves,'shelf'=>$rack,'layout'=>'edit']);
+        return view('shelf.edit',['shelves' => $shelves,'shelf'=>$shelf,'layout'=>'edit']);
     }
 
     /**
@@ -81,7 +81,13 @@ class ShelfController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $shelf = Shelf::find($id);
+        $shelf-> Name = $request->input('Name');
+        $shelf-> Remark = $request->input('Remark');     
+        $shelf-> status = $request->input('status');   
+        $shelf->save();
+        $shelves = Shelf::get();
+        return view('shelf.index', compact('shelves'));
     }
 
     /**
@@ -92,6 +98,8 @@ class ShelfController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $shelf=Shelf::find($id);
+        $shelf->delete();
+        return redirect('/shelf/index');
     }
 }

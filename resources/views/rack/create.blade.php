@@ -18,20 +18,20 @@
             <h6 class="m-0 font-weight-bold text-primary">Form Basic</h6>
         </div>
         <div class="card-body">
-            <form action="{{url('/store')}}" method="post">
+            <form action="{{url('/rack/store')}}" method="post">
                 @csrf
                 <div class="form-group">
                     <label for="exampleInputEmail1">Name</label>
-                    <input name="Name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <input required name="Name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                 </div>
                 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Remark</label>
-                    <textarea name="Remark" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"></textarea>                      
+                    <textarea required name="Remark" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"></textarea>                      
                 </div> 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Name</label>
-                    <select name="status" class="form-control">
+                    <select required name="status" class="form-control">
                     <option value="">--- Select Status ---</option>
                     <option value="Active">Active</option>
                     <option value="InActive">InActive</option>

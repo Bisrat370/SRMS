@@ -18,7 +18,7 @@
                 <h6 class="m-0 font-weight-bold text-primary">Form Basic</h6>
             </div>
             <div class="card-body"> 
-                <form action="{{url('/update/'.$rack->id)}}" method="get">
+                <form action="{{url('/rack/update/'.$rack->id)}}" method="get">
                     @csrf           
                         <div class="form-group">
                             <label for="Name">Name</label>

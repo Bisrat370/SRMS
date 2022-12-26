@@ -35,15 +35,21 @@
                         <td>{{$shelf->id}}</td>
                         <td>{{$shelf->Name}}</td>
                         <td>{{$shelf->Remark}}</td>
-                        <td><span class="badge badge-success">{{$shelf->status}}</span></td>
                         <td>
-                        <a href="{{url('/edit/'.$shelf->id)}}" class="btn btn-warning btn-sm">
+                          @if($shelf->status == 'Active')
+                          <span class="badge badge-success">{{$shelf->status}}</span>
+                          @else
+                          <span class="badge badge-danger">{{$shelf->status}}</span>
+                          @endif
+                        </td>
+                        <td>
+                        <a href="{{url('/shelf/edit/'.$shelf->id)}}" class="btn btn-warning btn-sm">
                           <i class="fas fa-exclamation-triangle"></i>
                         </a>                  
-                        <a href="{{url('/show/'.$shelf->id)}}" class="btn btn-info btn-sm">
+                        <a href="{{url('/shelf/show/'.$shelf->id)}}" class="btn btn-info btn-sm">
                           <i class="fas fa-info-circle"></i>
                         </a>
-                        <a href="{{url('/destroy/'.$shelf->id)}}" class="btn btn-danger btn-sm">
+                        <a href="{{url('/shelf/destroy/'.$shelf->id)}}" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm">
                           <i class="fas fa-trash"></i>
                         </a>
                         </td>

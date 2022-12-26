@@ -103,6 +103,6 @@ class RackController extends Controller
     {
         $rack=Rack::find($id);
         $rack->delete();
-        return redirect('/');
+        return redirect('/rack');
     }
 }

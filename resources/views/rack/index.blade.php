@@ -6,7 +6,7 @@
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="./">Rack</a></li>
+              <li class="breadcrumb-item"><a href="./">Rack Index</a></li>
               <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
             </ol>
           </div>
@@ -44,13 +44,13 @@
                         </td>
                         
                         <td>
-                        <a href="{{url('/edit/'.$rack->id)}}" class="btn btn-warning btn-sm">
+                        <a href="{{url('/rack/edit/'.$rack->id)}}" class="btn btn-warning btn-sm">
                           <i class="fas fa-exclamation-triangle"></i>
                         </a>                  
-                        <a href="{{url('/show/'.$rack->id)}}" class="btn btn-info btn-sm">
+                        <a href="{{url('/rack/show/'.$rack->id)}}" class="btn btn-info btn-sm">
                           <i class="fas fa-info-circle"></i>
                         </a>
-                        <a href="{{url('/destroy/'.$rack->id)}}" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm">
+                        <a href="{{url('/rack/destroy/'.$rack->id)}}" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm">
                           <i class="fas fa-trash"></i>
                         </a>
                         </td>

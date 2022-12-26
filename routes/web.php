@@ -21,18 +21,27 @@ Route::get('/', function () {
     return view('AdminLayout/Admin');
 });
 
-Route::get('/', 'RackController@index')->name('rack.name');
-Route::get('/create', 'RackController@create')->name('rack.create');
-Route::get('/show/{id}','RackController@show')->name('rack.show');
-Route::post('/store', 'RackController@store')->name('rack.store');
-Route::get('/update/{id}','RackController@update')->name('rack.update');
-Route::get('/edit/{id}',"RackController@edit")->name('rack.edit');
-Route::get('/destroy/{id}',"RackController@destroy")->name('rack.destroy');
-
+Route::group(array('prefix' => 'rack/'), function()
+{   
+    Route::get('/', 'RackController@index')->name('rack.name');
+    Route::get('/create', 'RackController@create')->name('rack.create');
+    Route::get('/show/{id}','RackController@show')->name('rack.show');
+    Route::post('/store', 'RackController@store')->name('rack.store');
+    Route::get('/update/{id}','RackController@update')->name('rack.update');
+    Route::get('/edit/{id}',"RackController@edit")->name('rack.edit');
+    Route::get('/destroy/{id}',"RackController@destroy")->name('rack.destroy');
+});
 
 //Shelf
-Route::get('index', 'ShelfController@index')->name('shelf.name');
-Route::get('/create', 'ShelfController@create')->name('shelf.create');
-Route::get('/show/{id}','ShelfController@show')->name('shelf.show');
-Route::post('/store', 'ShelfController@store')->name('shelf.store');
+Route::group(array('prefix' => 'shelf/'), function()
+{
+    Route::get('/index', 'ShelfController@index')->name('shelf.name');
+    Route::get('/create', 'ShelfController@create')->name('shelf.create');
+    Route::get('/show/{id}','ShelfController@show')->name('shelf.show');
+    Route::post('/store', 'ShelfController@store')->name('shelf.store');
+    Route::get('/update/{id}', 'ShelfController@update')->name('shelf.update');
+    Route::get('/edit/{id}', 'ShelfController@edit')->name('shelf.edit');
+    Route::get('/destroy/{id}',"ShelfController@destroy")->name('shelf.destroy');
+ });
+
 
