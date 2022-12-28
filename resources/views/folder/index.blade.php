@@ -6,11 +6,11 @@
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="./">Shelf</a></li>
+              <li class="breadcrumb-item"><a href="./">Rack Index</a></li>
               <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
             </ol>
           </div>
-          <a href="{{route('shelf.create')}}"  class="btn btn-primary mb-2" style="margin-left:657px;">Add New</a>
+          <a href="{{route('folder.create')}}"  class="btn btn-primary mb-2" style="margin-left:640px;">Add New</a>
           <div class="row">
             <div class="col-lg-12 mb-4">
               <!-- Simple Tables -->
@@ -24,37 +24,45 @@
                       <tr>
                         <th>ID</th>
                         <th>Name</th>
-                        <th>Remark</th>
-                        <th>Status</th>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Shelf</th>
+                        <th>Rack</th>
+                        <th>Status</th>                        
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
-                    @foreach($shelves as $shelf)                    
+                    @foreach($folders as $folder)                    
                     <tr>
-                        <td>{{$shelf->id}}</td>
-                        <td>{{$shelf->Name}}</td>
-                        <td>{{$shelf->Remark}}</td>
+                        <td>{{$folder->id}}</td>
+                        <td>{{$folder->name}}</td>
+                        <td>{{$folder->from}}</td>
+                        <td>{{$folder->to}}</td>
+                        <td>{{$folder->shelf_id}}</td>
+                        <td>{{$folder->rack_id}}</td>                        
                         <td>
-                          @if($shelf->status == 'Active')
-                          <span class="badge badge-success">{{$shelf->status}}</span>
-                          @else
-                          <span class="badge badge-danger">{{$shelf->status}}</span>
+                          @if($folder->status == 'Active')                          
+                            <span class="badge badge-success">{{$folder->status}}</span>                          
+                          @else                          
+                            <span class="badge badge-danger">{{$folder->status}}</span>                         
                           @endif
-                        </td>
+                        </td>                        
                         <td>
-                        <a href="{{url('/shelf/edit/'.$shelf->id)}}" class="btn btn-warning btn-sm">
+                        <a href="{{url('/folder/edit/'.$folder->id)}}" class="btn btn-warning btn-sm">
                           <i class="fas fa-exclamation-triangle"></i>
                         </a>                  
-                        <a href="{{url('/shelf/show/'.$shelf->id)}}" class="btn btn-info btn-sm">
+                        <a href="{{url('/folder/show/'.$folder->id)}}" class="btn btn-info btn-sm">
                           <i class="fas fa-info-circle"></i>
                         </a>
-                        <a href="{{url('/shelf/destroy/'.$shelf->id)}}" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm">
+                        <a href="{{url('/folder/destroy/'.$folder->id)}}" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm">
                           <i class="fas fa-trash"></i>
                         </a>
                         </td>
                       </tr>
-                      @endforeach
+                      @endforeach  
+                     
+                      
                     </tbody>
                   </table>
                 </div>

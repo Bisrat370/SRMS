@@ -44,4 +44,12 @@ Route::group(array('prefix' => 'shelf/'), function()
     Route::get('/destroy/{id}',"ShelfController@destroy")->name('shelf.destroy');
  });
 
+ //Folder
+ Route::group(array('prefix' => 'folder'), function()
+ {
+    Route::get('/index','FolderController@index')->name('folder.name');
+    Route::get('/create', 'FolderController@create')->name('folder.create');
+    Route::post('/store','FolderController@store')->name('folder.store');
+    Route::get('/edit/{id}', 'FolderController@edit')->name('folder.edit');
+ });
 

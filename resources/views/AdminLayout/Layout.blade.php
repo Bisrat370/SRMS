@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link href="{{asset('Layout/img/logo/logo.png')}}" rel="icon">
-  <title>RuangAdmin - Dashboard</title>
+  <title>Student Recording Management System- Dashboard</title>
   <link href="{{asset('Layout/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
   <link href="{{asset('Layout/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
   <link href="{{asset('Layout/css/ruang-admin.min.css')}}" rel="stylesheet">
@@ -24,7 +24,7 @@
         <div class="sidebar-brand-icon">
           <img src="{{asset('Layout/img/logo/logo2.png')}}">
         </div>
-        <div class="sidebar-brand-text mx-3">RuangAdmin</div>
+        <div class="sidebar-brand-text mx-3">SRMS</div>
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item active">
@@ -47,7 +47,7 @@
             <h6 class="collapse-header">Archives</h6>
             <a class="collapse-item" href="{{route('rack.name')}}">Rack</a>
             <a class="collapse-item" href="{{route('shelf.name')}}">Shelf</a>
-            <a class="collapse-item" href="dropdowns.html">Folder</a>           
+            <a class="collapse-item" href="{{route('folder.name')}}">Folder</a>           
           </div>
         </div>
       </li>
