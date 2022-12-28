@@ -74,7 +74,9 @@ class FolderController extends Controller
      */
     public function show($id)
     {
-        //
+        $folder = Folder::find($id);
+        $folders = Folder::all();
+        return view('folder.show',['folders' => $folder,'folder'=>$folder, 'layout'=>'show']);
     }
 
     /**
@@ -103,7 +105,17 @@ class FolderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $folder = Folder::find($id);
+        $folder-> name = $request->input('name');
+        $folder-> remark = $request->input('remark');
+        $folder-> from = $request->input('from');    
+        $folder-> to = $request->input('to');
+        $folder-> rack_id = $request->input('rack_id');
+        $folder-> shelf_id = $request->input('shelf_id');
+        $folder-> status = $request->input('status');
+        $folder->save();
+        $folders = Folder::get();
+        return view('folder.index', compact('folders'));
     }
 
     /**
@@ -114,6 +126,8 @@ class FolderController extends Controller
      */
     public function destroy($id)
     {
-        //
+         $folder = Folder::find($id);
+        $folder->delete();
+        return redirect('/folder/index');
     }
 }

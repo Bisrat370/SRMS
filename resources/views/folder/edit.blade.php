@@ -18,7 +18,7 @@
             <h6 class="m-0 font-weight-bold text-primary">Form Basic</h6>
         </div>
         <div class="card-body">
-            <form action="{{url('/folder/update')}}" method="post">            
+            <form action="{{url('/folder/update/' .$folder->id)}}" method="get">            
             @csrf               
             <div class="row">
                 <div class="col-md-6">
@@ -53,7 +53,7 @@
                         <div class="form-group">
                                 <label for="exampleInputEmail1">Shelf</label>
                                 <select value="{{$folder->shelf_id}}" required name="shelf_id" class="form-control">                                           
-                                        <option value="">--- Select Shelf ---</option>  
+                                        
                                         @foreach($shelvess as $shelf)
                                             <option value="{{ $shelf->id }}" >{{$shelf->Name}}</option>
                                         @endforeach
@@ -63,27 +63,28 @@
             <div class="col-md-6">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Rack</label>
-                        <select required name="rack_id" class="form-control">                                           
-                            <option value="">--- Select Rack ---</option>  
+                        <select required name="rack_id" class="form-control">                                       
+                           
                                 @foreach($rackss as $rack)
-                                    <option value="{{ $rack->id }}" >{{$rack->Name}}</option>
+                                    <option value="{{ $rack->id }}">{{$rack->Name}}</option>
                                 @endforeach
                             </select>                          
                     </div>
                 </div>     
             </div>                       
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Rack 1</label>
                         <select class="form-control" data-live-search="true" name="rack_id" id="subject">
-                                @foreach($rackss as $rack =>$rack_id)
-                                    <option value="{{$rack->}}" {{$rack_id->rack == $rack ? 'selected' : ''}}>{{$rack_id}}</option>
+                                @foreach($rackss as $rack =>$Name)
+                                    <option value="{{$rack}}" {{$Name->rack == $rackss ? 'selected' : ''}}>{{$Name}}</option>
                                 @endforeach
                         </select>
+                        
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">

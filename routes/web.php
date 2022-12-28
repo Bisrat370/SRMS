@@ -51,5 +51,8 @@ Route::group(array('prefix' => 'shelf/'), function()
     Route::get('/create', 'FolderController@create')->name('folder.create');
     Route::post('/store','FolderController@store')->name('folder.store');
     Route::get('/edit/{id}', 'FolderController@edit')->name('folder.edit');
+    Route::get('/update/{id}','FolderController@update')->name('folder.update');
+    Route::get('/destroy/{id}','FolderController@destroy')->name('folder.destroy');
+    Route::get('/show/{id}','FolderController@show')->name('folder.show');
  });
 
